@@ -178,16 +178,16 @@ console.log("cartItems===> ",cart);
 
 
 // Rendering Products  
-let card = document.querySelector(".container");
+let card = document.querySelector(".c-container");
 
 function renderArr(arr) {
     card.innerHTML = "";
     arr.map((item, index) => {
-        card.innerHTML += `<div class="card">
+        card.innerHTML += `<div class="c-card">
         <h3>Brand: ${item.brand}</h3>
         <h3>Model: ${item.model}</h3>
         <h3>Price: ${item.price}</h3>
-        <button onclick="addToCart(${index})">Add to Cart</button>
+        <button class = "c-button  bg-danger text-white" onclick="addToCart(${index})">Add to Cart</button>
         <div>`
     })
 }
@@ -208,6 +208,23 @@ function addToCart(index) {
         cart[checkCart].quantity++;
     }
     console.log(cart);
+    Swal.fire({
+        title: "Custom animation with Animate.css",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+        }
+      });
 }
 
 
