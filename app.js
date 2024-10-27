@@ -6,6 +6,7 @@ const phones = [
         rom: 128,
         camera: "64 megapixel",
         price: 799,
+        image: "./assets/samsung.webp",
     },
     {
         brand: "Apple",
@@ -14,6 +15,7 @@ const phones = [
         rom: 128,
         camera: "12 megapixel",
         price: 799,
+        image: "phone images/iphone13-transformed.webp",    
     },
     {
         brand: "OnePlus",
@@ -22,6 +24,7 @@ const phones = [
         rom: 256,
         camera: "48 megapixel",
         price: 729,
+        image: "phone images/oneplus9-transformed.webp",
     },
     {
         brand: "Google",
@@ -30,6 +33,7 @@ const phones = [
         rom: 128,
         camera: "50 megapixel",
         price: 599,
+        image: "phone images/googlepixel6-transformed.webp",
     },
     {
         brand: "Xiaomi",
@@ -38,6 +42,7 @@ const phones = [
         rom: 256,
         camera: "108 megapixel",
         price: 749,
+        image: "phone images/xiaomimi11-removebg-preview.png",
     },
     {
         brand: "Sony",
@@ -46,6 +51,7 @@ const phones = [
         rom: 256,
         camera: "12 megapixel",
         price: 1299,
+        image: "phone images/sonyxperia1-removebg-preview.png",
     },
     {
         brand: "Oppo",
@@ -54,6 +60,7 @@ const phones = [
         rom: 256,
         camera: "50 megapixel",
         price: 1149,
+        image: "phone images/oppofindx3-removebg-preview.png",
     },
     {
         brand: "Vivo",
@@ -62,6 +69,7 @@ const phones = [
         rom: 256,
         camera: "48 megapixel",
         price: 999,
+        image: "phone images/vivox60-transformed.webp",
     },
     {
         brand: "Nokia",
@@ -70,6 +78,7 @@ const phones = [
         rom: 128,
         camera: "48 megapixel",
         price: 299,
+        image: "assets/1-6.webp",
     },
     {
         brand: "Motorola",
@@ -78,6 +87,7 @@ const phones = [
         rom: 256,
         camera: "108 megapixel",
         price: 599,
+        image: "phone images/motrollaedge20-transformed.png",
     },
     {
         brand: "Realme",
@@ -86,6 +96,7 @@ const phones = [
         rom: 256,
         camera: "64 megapixel",
         price: 499,
+        image: "phone images/relmegt-removebg-preview.png",
     },
     {
         brand: "Asus",
@@ -94,6 +105,7 @@ const phones = [
         rom: 512,
         camera: "64 megapixel",
         price: 999,
+        image: "./assets/asusrog.png",
     },
     {
         brand: "HTC",
@@ -102,6 +114,7 @@ const phones = [
         rom: 128,
         camera: "48 megapixel",
         price: 399,
+        image: "phone images/htc-transformed.webp",
     },
     {
         brand: "Huawei",
@@ -110,6 +123,7 @@ const phones = [
         rom: 256,
         camera: "50 megapixel",
         price: 899,
+        image: "phone images/huawei-removebg-preview.png",
     },
     {
         brand: "LG",
@@ -118,6 +132,7 @@ const phones = [
         rom: 256,
         camera: "64 megapixel",
         price: 999,
+        image: "phone images/lg-removebg-preview.png",
     },
     {
         brand: "ZTE",
@@ -126,6 +141,7 @@ const phones = [
         rom: 128,
         camera: "64 megapixel",
         price: 399,
+        image: "./assets/zte.jpg",
     },
     {
         brand: "BlackBerry",
@@ -134,6 +150,7 @@ const phones = [
         rom: 64,
         camera: "12 megapixel",
         price: 649,
+        image: "phone images/blackberry-removebg-preview.png",
     },
     {
         brand: "Lenovo",
@@ -142,6 +159,7 @@ const phones = [
         rom: 512,
         camera: "64 megapixel",
         price: 999,
+        image: "phone images/lenovolegion-transformed.webp",
     },
     {
         brand: "Alcatel",
@@ -150,6 +168,7 @@ const phones = [
         rom: 64,
         camera: "48 megapixel",
         price: 199,
+        image: "phone images/alcatel-removebg-preview.png",
     },
     {
         brand: "TCL",
@@ -158,6 +177,7 @@ const phones = [
         rom: 128,
         camera: "64 megapixel",
         price: 449,
+        image: "phone images/images-removebg-preview.png",
     },
 ];
 
@@ -184,6 +204,9 @@ function renderArr(arr) {
     card.innerHTML = "";
     arr.map((item, index) => {
         card.innerHTML += `<div class="c-card">
+        <div class="flex">
+        <img src="${item.image}" alt="${item.model}" class="phone-image" />
+        </div>
         <h3>Brand: ${item.brand}</h3>
         <h3>Model: ${item.model}</h3>
         <h3>Price: ${item.price}</h3>
@@ -209,7 +232,7 @@ function addToCart(index) {
     }
     console.log(cart);
     Swal.fire({
-        title: "Custom animation with Animate.css",
+        title: "Product added Successfully",
         showClass: {
           popup: `
             animate__animated
