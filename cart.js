@@ -14,7 +14,7 @@
 //             <button class="quantity-btn" onclick="decrement(${index})">-</button>
 //             <h3 id="multiple-${index}">1</h3>
 //             <button class="quantity-btn" onclick="increment(${index})">+</button>
-    
+
 //         </div>
 //         <div>`
 // })
@@ -88,10 +88,17 @@ function deleteProduct(index) {
     renderCart();
 }
 
+
 function updateTotalPrice() {
     let total = document.querySelector("#totalPrice");
     total.innerHTML = recieveData.reduce((acc, cval, index) => {
-        let quantity = parseInt(document.querySelector(`#multiple-${index}`)?.innerHTML || 0);
+        let quantityElement = document.querySelector(`#multiple-${index}`);
+        let quantity = 0;
+
+        if (quantityElement) {
+            quantity = parseInt(quantityElement.innerHTML);
+        }
+
         return acc + cval.price * quantity;
     }, 0);
 }
